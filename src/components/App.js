@@ -95,10 +95,18 @@ export default function App() {
     0,
   );
 
+  // useEffect(function () {
+  //   fetch("http://localhost:8000/questions")
+  //     .then((res) => res.json())
+  //     .then((data) => dispatch({ type: "dataRecived", payload: data }))
+  //     .catch((err) => dispatch({ type: "dataFailed" }));
+  // }, []);
   useEffect(function () {
-    fetch("http://localhost:8000/questions")
+    fetch(`${process.env.PUBLIC_URL}/data/questions.json`)
       .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataRecived", payload: data }))
+      .then((data) =>
+        dispatch({ type: "dataRecived", payload: data.questions }),
+      )
       .catch((err) => dispatch({ type: "dataFailed" }));
   }, []);
   return (
