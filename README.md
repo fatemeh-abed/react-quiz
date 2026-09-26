@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# React Quiz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A quiz application built with **React** to practice managing complex state with the `useReducer` Hook.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+https://fatemeh-abed.github.io/react-quiz/
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Fetch and display quiz questions
+* Multiple-choice questions
+* Score calculation
+* Progress tracking
+* Countdown timer
+* High score tracking
+* Restart the quiz
+* Loading and error states
+* Responsive UI
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+* React
+* JavaScript
+* `useReducer`
+* `useEffect`
+* CSS
+* JSON Server for local development
+* GitHub Pages for deployment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## What I Practiced
 
-### `npm run build`
+The main goal of this project was to practice **`useReducer`** for managing complex application state.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The quiz state includes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Current question
+* Selected answer
+* Score
+* Quiz status
+* Timer
+* High score
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Instead of managing these states with multiple `useState` calls, the application uses a reducer to handle state transitions through actions such as:
 
-### `npm run eject`
+```js
+start
+newAnswer
+nextQuestion
+finish
+restart
+tick
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This makes the state logic more centralized and easier to manage as the application grows.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Local API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The project originally uses JSON Server for local development.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run server
+```
 
-## Learn More
+The API runs at:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```text
+http://localhost:8000
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For the deployed version, quiz data is served as a static JSON file so the application does not depend on a local server.
 
-### Code Splitting
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The project is deployed using **GitHub Pages**.
 
-### Analyzing the Bundle Size
+To create a production build:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run build
+```
 
-### Making a Progressive Web App
+To deploy:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm run deploy
+```
